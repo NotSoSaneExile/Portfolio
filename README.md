@@ -16,6 +16,7 @@ Each project has its own folder, which contains its source code and any necessar
 * Create README files for the projects
 * Tweak the Sentiment Analysis model. Current version has 0.99 R Score for the positive sentiment and around 0.70 for the negative ones. I want to get the negative sentiments above 0.90
 * Add features to the Trading Charts Plotter. Allowing for a live data plotting, switching between different financial instruments/indicators etc. I'd also love to add some trading signals based on some strategies.
+* NEW PROJECTS
 
 # Getting Started
 To get started with any of these projects, simply navigate to its corresponding folder and follow the instructions in the README file.
