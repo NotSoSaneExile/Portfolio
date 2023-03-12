@@ -1,6 +1,7 @@
 # Portfolio
-This repository contains several projects I've worked on:
+This repository contains several projects I've worked on and find interesting.
 
+# Contents
 A-Star Visualiser: A visualisation tool for the A-Star pathfinding algorithm, implemented in Python and Pygame.
 
 CAPM Verifier: A tool for verifying the validity of the Capital Asset Pricing Model using historical stock data, implemented in Python using Streamlit.
@@ -10,6 +11,11 @@ Trading Charts Plotter: A tool for plotting trading charts with Heiken Ashi cand
 Sentiment Analysis ML: A machine learning model for sentiment analysis of text data, implemented in Python using Natural Language Toolkit (NLTK) and scikit-learn. 
 
 Each project has its own folder, which contains its source code and any necessary files. Additionally, each project folder has its own README file, providing more detailed information about the project and how to run it.
+
+# In Progress
+* Create README files for the projects
+* Tweak the Sentiment Analysis model. Current version has 0.99 R Score for the positive sentiment and around 0.70 for the negative ones. I want to get the negative sentiments above 0.90
+* Add features to the Trading Charts Plotter. Allowing for a live data plotting, switching between different financial instruments/indicators etc. I'd also love to add some trading signals based on some strategies.
 
 # Getting Started
 To get started with any of these projects, simply navigate to its corresponding folder and follow the instructions in the README file.
