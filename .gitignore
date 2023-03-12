@@ -130,3 +130,8 @@ dmypy.json
 
 # TOML
 *.toml
+
+# Streamlit
+.streamlit/
+lib/streamlit/static
+streamlit-storage
