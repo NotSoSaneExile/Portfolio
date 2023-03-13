@@ -1,8 +1,7 @@
 # Hogwarts Legacy Reviews Sentiment Analysis
 This project performs a sentiment analysis of reviews for the video game "Hogwarts Legacy". The sentiment analysis is performed using the NLTK and Scikit-learn Python libraries.
 
-# Requirements
-To run this project, you will need the following Python libraries:
+# Dependencies
 * nltk
 * pandas
 * scikit_learn
@@ -10,10 +9,11 @@ To run this project, you will need the following Python libraries:
 # Usage
 To use this project, follow these steps:
 
-1. Clone the repository to your local machine.
-2. Install the required libraries using the command pip install -r requirements.txt.
-3. Run python main.py to download necessary NLTK packages, create a SQLite3 database, and create a machine learning model pipeline.
-4. Run python sentiment_analysis.py to preprocess the data and perform sentiment analysis on the reviews.
+1. Have Python >= 3.9 installed on your machine https://docs.python.org/3/using/index.html
+2. Clone the repository to your local machine.
+3. Install the required libraries using the command pip install -r requirements.txt.
+4. Run python main.py to download necessary NLTK packages, create a SQLite3 database, and create a machine learning model pipeline.
+5. Run python sentiment_analysis.py to preprocess the data and perform sentiment analysis on the reviews.
 
 # Files
 The project contains the following files:
