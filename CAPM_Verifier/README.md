@@ -17,7 +17,8 @@ The CAPM Verifier uses the following Python dependencies:
 You can try the tool by clicking on this link https://capm-notsosaneexile.streamlit.app/. \
 __If the app was put to sleep or there are any problems with deployment you can try to run it locally.__ \
 Current version uses a .streamlit directory with the config and secrets files. Both being .toml format\
-If you'd like to run the code on your machine you'd need to create a .streamlit directory.\
+If you'd like to run the code on your machine you'd need to create a .streamlit directory in the repo directory.\
+Then you need to create secrets.toml file in the .streamlit directory. You can also create a config.toml file but it's not required to run the program. \
 The logic between accessing data sheets should be put in secrets.toml like that:\
 `[gcp_service_account]`\
 `type = "service_account"`\
