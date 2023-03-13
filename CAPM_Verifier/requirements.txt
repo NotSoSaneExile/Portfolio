@@ -1,7 +1,7 @@
 gsheetsdb==0.1.13.1
 numpy==1.23.3
 pandas==1.4.4
-protobuf==4.22.1
+protobuf==3.12
 pyecharts==1.9.1
 streamlit==1.14.0
 streamlit_echarts==0.4.0
