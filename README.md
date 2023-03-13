@@ -13,7 +13,6 @@ This portfolio repository contains several projects I've worked on and find inte
 Each project has its own folder, which contains its source code and any necessary files. Additionally, each project folder will have its own README file, providing more detailed information about the project and how to run it.
 
 # In Progress
-* Create README files for the projects
 * Tweak the Sentiment Analysis model. Current version has around 0.99 R Score for the positive sentiment and around 0.70 for the negative ones. 
 * Add features to the Trading Charts Plotter. Such as live data plotting, switching between different financial instruments/indicators etc. I'd also love to add some trading signals based on some strategies with backtesting.
 * New projects
