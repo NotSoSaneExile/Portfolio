@@ -2,7 +2,7 @@
 This portfolio repository contains several projects I've worked on and find interesting.
 
 # Contents
-* A-Star Visualiser: A visualisation tool for the A-Star pathfinding algorithm, implemented in Python and Pygame.
+* A-Star Pathfinding visualisation: A visualisation tool for the A-Star pathfinding algorithm, implemented in Python and Pygame.
 
 * CAPM Verifier: A tool for verifying the validity of the investement portfolios using Capital Asset Pricing Model and historical prices data. It was implemented in Python using Streamlit. The tool was made with the thought of the Warsaw Stock Exchange Main Market. 
 
