@@ -3,7 +3,7 @@ The A* pathfinding algorithm is a popular and widely used algorithm in the field
 
 In this code, we use the A* algorithm to find the shortest path between two points on a 2D grid. We use Pygame to create a graphical representation of the grid and the search algorithm.
 
-How to Use
+# How to Use
 First, make sure you have Python 3.x installed on your computer. Then, you need to install the Pygame and Colorspy library. You can install them using pip by typing the following command in your terminal:
 
 `pip install pygame`
@@ -13,8 +13,9 @@ Once Pygame is installed, you can run the code by typing the following command i
 
 `python main.py`
 
-The code will open a Pygame window showing a grid. The start point is marked in blue, the end point is marked in orange, and the obstacles are marked in black. 
-First two clicks of the left mouse button would apply the start/end nodes. Afterwards you can add obstacles to the grid by clicking on a cell. You can reset the node by clicking on the cell with your right mouse button. To start the search algorithm, press the space bar. You can also press the 'C' key to clear the grid and ESC to close the program. Current version locks the mouse inside the grid to prevent indexes crashing.
+__1. The code will open a Pygame window showing a grid. The start point is marked in blue, the end point is marked in orange, and the obstacles are marked in black. 
+__2. First two clicks of the left mouse button would apply the start/end nodes. Afterwards you can add obstacles to the grid by clicking on a cell. You can reset the node by clicking on the cell with your right mouse button. 
+__3. To start the search algorithm, press the space bar. You can also press the 'C' key to clear the grid and ESC to close the program. Current version locks the mouse inside the grid to prevent indexes crashing.
 
 # Code Overview
 The code consists of several components:
