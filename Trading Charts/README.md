@@ -13,6 +13,7 @@ Before running the script, make sure you have the following installed:
 * toml
 * mplfinance
 * requests
+* numpy
 
 You can install the dependencies by running:
 `pip install -r requirements.txt` in your command line.\
