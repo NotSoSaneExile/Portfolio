@@ -16,12 +16,12 @@ Before running the script, make sure you have the following installed:
 
 You can install the dependencies by running:
 `pip install -r requirements.txt` in your command line
-To install python please follow the documentation https://docs.python.org/3/using/index.html
+To install python please follow the documentation https://docs.python.org/3/using/index.html\
 You will also need an AlphaVantage API key. You can get a free one by signing up at https://www.alphavantage.co/.
 
 Once you have installed the dependencies and obtained an API key, create a secrets.toml file in the same directory as the script and add your API key as follows:
 
-`[API]`
+`[API]`\
 `api_key = "your_api_key_here"`
 
 # Running the Script
