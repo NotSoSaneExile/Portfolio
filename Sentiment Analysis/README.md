@@ -3,9 +3,9 @@ This project performs a sentiment analysis of reviews for the video game "Hogwar
 
 # Requirements
 To run this project, you will need the following Python libraries:
-nltk
-pandas
-scikit_learn
+* nltk
+* pandas
+* scikit_learn
 
 # Usage
 To use this project, follow these steps:
