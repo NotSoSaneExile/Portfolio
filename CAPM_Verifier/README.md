@@ -14,7 +14,7 @@ The CAPM Verifier uses the following Python dependencies:
 * The Python version used for this app is 3.9.5.
 
 # Usage
-You can try the tool by clicking on this link. https://capm-notsosaneexile.streamlit.app/\
+You can try the tool by clicking on this link https://capm-notsosaneexile.streamlit.app/. \
 If the app was put to sleep you can try to run it locally.\
 Current version uses a .streamlit directory with the config and secrets files. Both being .toml format\
 If you'd like to run the code on your machine you'd need to create a .streamlit directory.\
