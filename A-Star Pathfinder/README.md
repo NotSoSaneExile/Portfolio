@@ -13,9 +13,9 @@ Once Pygame is installed, you can run the code by typing the following command i
 
 `python main.py`
 
-+ __The code will open a Pygame window showing a grid. The start point is marked in blue, the end point is marked in orange, and the obstacles are marked in black.__
-+ __First two clicks of the left mouse button would apply the start/end nodes. Afterwards you can add obstacles to the grid by clicking on a cell. You can reset the node by clicking on the cell with your right mouse button.__
-+ __To start the search algorithm, press the space bar. You can also press the 'C' key to clear the grid and ESC to close the program. Current version locks the mouse inside the grid to prevent indexes crashing.__
+1. __The code will open a Pygame window showing a grid. The start point is marked in blue, the end point is marked in orange, and the obstacles are marked in black.__
+2. __First two clicks of the left mouse button would apply the start/end nodes. Afterwards you can add obstacles to the grid by clicking on a cell. You can reset the node by clicking on the cell with your right mouse button.__
+3. __To start the search algorithm, press the space bar. You can also press the 'C' key to clear the grid and ESC to close the program. Current version locks the mouse inside the grid to prevent indexes crashing.__
 
 # Code Overview
 The code consists of several components:
