@@ -1,33 +1,34 @@
 # AlphaVantage Heiken Ashi Plotter
-This script currently retrieves daily foreign exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculates the Heiken Ashi candlestick chart, and plots it using mplfinance library.
+This script currently retrieves daily foreign exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculates the Heiken Ashi candlestick chart, MACD indicator, ATR indicator and plots them using mplfinance library.
 
-# Further improvments plans
-The current version is just a basic script to get things started. Eventually I'd like to allow the user to choose different financial instruments, plot live data and allow for specifiying which indicators to plot.
-If time allows I'd also love to try writing some scripts that would make a trading calls and allow for backtesting the strategies.
+## Further improvements plans
+The current version is just a basic script to get things started. Eventually I'd like to allow the user to choose different financial instruments, plot live data and allow for specifiying which indicators to plot.\
+If time allows I'd also love to add a feature for trading strategies backtesting.
 
 # Getting Started
 Before running the script, make sure you have the following installed:
 
-Python 3
-pandas
-toml
-mplfinance
-requests
+* Python 3.9.x - I'm running 3.9.5. Will probably work with version 3.7.x
+* pandas
+* toml
+* mplfinance
+* requests
+* numpy
 
 You can install the dependencies by running:
-'pip install -r requirements.txt' in your command line
-
+`pip install -r requirements.txt` in your command line.\
+To install python please follow the documentation https://docs.python.org/3/using/index.html\.
 You will also need an AlphaVantage API key. You can get a free one by signing up at https://www.alphavantage.co/.
 
 Once you have installed the dependencies and obtained an API key, create a secrets.toml file in the same directory as the script and add your API key as follows:
 
-'[API]'
-'api_key = "your_api_key_here"'
+`[API]`\
+`api_key = "your_api_key_here"`
 
 # Running the Script
 To run the script, simply execute it in your Python environment of choice:
 
-'python main.py'
+`python main.py`
 
 The script will retrieve daily exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculate the Heiken Ashi candlestick chart, and plot it using mplfinance. The resulting plot will be displayed in a new window.
 

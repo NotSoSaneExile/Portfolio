@@ -1,10 +1,10 @@
 # Portfolio
-This repository contains several projects I've worked on and find interesting.
+This portfolio repository contains several projects I've worked on and find interesting.
 
 # Contents
 * A-Star Visualiser: A visualisation tool for the A-Star pathfinding algorithm, implemented in Python and Pygame.
 
-* CAPM Verifier: A tool for verifying the validity of the Capital Asset Pricing Model using historical stock data, implemented in Python using Streamlit.
+* CAPM Verifier: A tool for verifying the validity of the investement portfolios using Capital Asset Pricing Model and historical prices data. It was implemented in Python using Streamlit. The tool was made with the thought of the Warsaw Stock Exchange Main Market. 
 
 * Trading Charts Plotter: A tool for plotting trading charts with Heiken Ashi candles and technical indicators, implemented in Python and using Alpha Vantage API. This is still a work in progress. Current version is quite basic.
 
@@ -14,8 +14,8 @@ Each project has its own folder, which contains its source code and any necessar
 
 # In Progress
 * Create README files for the projects
-* Tweak the Sentiment Analysis model. Current version has 0.99 R Score for the positive sentiment and around 0.70 for the negative ones. I want to get the negative sentiments above 0.90
-* Add features to the Trading Charts Plotter. Such as live data plotting, switching between different financial instruments/indicators etc. I'd also love to add some trading signals based on some strategies.
+* Tweak the Sentiment Analysis model. Current version has around 0.99 R Score for the positive sentiment and around 0.70 for the negative ones. 
+* Add features to the Trading Charts Plotter. Such as live data plotting, switching between different financial instruments/indicators etc. I'd also love to add some trading signals based on some strategies with backtesting.
 * New projects
 
 # Getting Started
