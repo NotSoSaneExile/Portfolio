@@ -59,23 +59,23 @@ def expected_mean_return(stocks_mean_return, weights):
 
 def latex_sidebar(): #TODO
   with st.sidebar:
-    st.title("Użyte formuły:")
-    st.latex(r'''\textbf {Linia rynku kapitałowego CML}''')
-    st.latex(r'''\textbf {CML}: E(R_P) = R_f + \frac{(E(R_M)-R_f)}{σ_M}\cdotσ_P''') #* CML
-    st.write("*gdzie:*")
-    st.latex(r'''E(R_P) - oczekiwana\,stopa\,zwrotu\,portfela\,efektywnego\,P''')
-    st.latex(r'''R_f - stopa\,zwrotu\,wolna\,od\,ryzyka,''')
-    st.latex(r'''E(R_M) - oczekiwana\,stopa\,zwrotu\,portfela\,rynkowego\,M,''')
-    st.latex(r'''σ_M\ - ryzyko\,stopy\,zwrotu\,portfela\,rynkowego\,M,''')
-    st.latex(r'''σ_P\ - ryzyko\,stopy\,zwrotu\,portfela\,efektywnego\,P''')
-    st.latex(r'''\textbf {Linia rynku papierów wartościowych SML}''')
-    st.latex(r'''\textbf {SML}: E(R_P) = R_f + β_P\cdot(E(R_M)-R_f)''') #* SML
-    st.write("*gdzie:*")
-    st.latex(r'''E(R_P) - oczekiwana\,stopa\,zwrotu\,portfela\,P,''')
-    st.latex(r'''R_f - stopa\,zwrotu\,wolna\,od\,ryzyka,''')
-    st.latex(r'''β_P - współczynnik\,beta\,Sharpe’\,portfela\,P,''')
-    st.latex(r'''E(R_M) - oczekiwana\,stopa\,zwrotu\,portfela\,rynkowego\,M.''')
-    st.latex(r'''\textbf {Lewa strona SML i CML:}''')
+    st.title("Formulas used:")
+    st.latex(r'''\textbf{Capital Market Line (CML)}''')
+    st.latex(r'''\textbf{CML}: E(R_P) = R_f + \frac{(E(R_M) - R_f)}{\sigma_M} \cdot \sigma_P''') #* CML
+    st.write("*where:*")
+    st.latex(r'''E(R_P) - expected\,return\,of\,the\,efficient\,portfolio\,P''')
+    st.latex(r'''R_f - risk-free\,rate\,''')
+    st.latex(r'''E(R_M) - expected\,return\,of\,the\,market\,portfolio\,M,''')
+    st.latex(r'''σ_M - risk\,of\,the\,market\,portfolio\,M,''')
+    st.latex(r'''σ_P - risk\,of\,the\,efficient\,portfolio\,P''')
+    st.latex(r'''\textbf{Security Market Line (SML)}''')
+    st.latex(r'''\textbf{SML}: E(R_P) = R_f + β_P \cdot (E(R_M) - R_f)''') #* SML
+    st.write("*where:*")
+    st.latex(r'''E(R_P) - expected\,return\,of\,portfolio\,P,''')
+    st.latex(r'''R_f - risk-free\,rate\,''')
+    st.latex(r'''β_P - Sharpe's\,beta\,coefficient\,of\,portfolio\,P,''')
+    st.latex(r'''E(R_M) - expected\,return\,of\,the\,market\,portfolio\,M.''')
+    st.latex(r'''\textbf{Left side of SML and CML:}''')
     st.latex(r'''L_{SML} = L_{CML} = E(R_P)''')
      
 def get_prices_data(prices_url: str):
@@ -109,20 +109,20 @@ def create_date_input(col, label, start_value):
 
 
 
-funds_checkbox = st.checkbox("Użyj funduszy inwestycyjnych otwartych do zawarcia w portfelu.")
+funds_checkbox = st.checkbox("Switch from stocks to funds.")
 col1, col2 = st.columns(2)
 if 'assets_share_dict' not in session:
     session["assets_share_dict"] = {key: 1000 for key in wig_twenty_companies}
     
-start_date = create_date_input(col1, "Data początkowa", datetime(2022, 1, 1))
-end_date = create_date_input(col2, "Data końcowa", datetime(2022, 7, 1))
+start_date = create_date_input(col1, "Start date", datetime(2022, 1, 1))
+end_date = create_date_input(col2, "End date", datetime(2022, 7, 1))
 
 if start_date > end_date:
-    st.error("Data początkowa jest większa od końcowej!")
+    st.error("Start date is higher than the end date!")
     disable_the_multiselect = True
     st.stop()
 elif start_date == end_date:
-    st.error("Wybrano zakres tylko dla jednego dnia.")
+    st.error("Time period is equal to 0. Same dates chosen.")
     disable_the_multiselect = True
     st.stop()
     
@@ -137,11 +137,11 @@ if 'assets_share_dict' not in session:
 try:
     stocks_df, stocks_daily_range_returns, stocks_mean_er, market_daily_range_returns, market_mean = get_prices_data(assets_dict[funds_checkbox]["url"])
 except IndexError:
-    st.error("W wybranym okresie nie wystąpiły żadne sesje giełdowe. Wybierz inny zakres dat.")
+    st.error("There were no trading sessions in the chosen time period. Choose a different period.")
     st.stop()
 
 assets_multiselect = st.multiselect(
-    f"Wybierz {'fundusze' if funds_checkbox else 'spółki wchodzące w skład WIG20'}, które chcesz umieścić w swoim portfelu inwestycyjnym.",
+    f"Select {'funds' if funds_checkbox else 'companies that are part of the WIG20 index'} that you want to include in your investment portfolio.",
     assets_dict[funds_checkbox]["assets"],
     disabled=disable_the_multiselect
 )
@@ -166,13 +166,13 @@ if assets_multiselect:
             tooltip_opts=opts.TooltipOpts(is_show=True, formatter="{b}: {c}")
         )
     st_pyecharts(line_chart)
-    expander =  st.expander("Wpisz sumę, którą chcesz przeznaczyć na poszczególną spółkę/fundusz", expanded=True)
+    expander =  st.expander("Enter the amount that you want to allocate to each asset.", expanded=True)
     with expander:
       for i in assets_multiselect:
         b, a = np.polyfit(stocks_daily_range_returns['WIG20'], stocks_daily_range_returns[i], 1)
         beta[i] = b
         alpha[i] = round(a, 4)
-        var_assets_share_dict[i] = st.number_input("Aktywo: {} | Alfa: {} | Beta: {:.2f} | Cena: {:.2f} zł".format(i, alpha[i], beta[i], stocks_df[i].loc[end_date]), min_value=0, step=100, value=session.assets_share_dict[i])
+        var_assets_share_dict[i] = st.number_input("Asset: {} | Alpha: {} | Beta: {:.2f} | Price: {:.2f} PLN".format(i, alpha[i], beta[i], stocks_df[i].loc[end_date]), min_value=0, step=100, value=session.assets_share_dict[i])
         session.assets_share_dict[i] = var_assets_share_dict[i]
     #filter the dictionary to get only values picked by user
     var_assets_share_dict = filter_the_dict(var_assets_share_dict)
@@ -180,13 +180,13 @@ if assets_multiselect:
     risk_free_rate = (wibor_df["Close"].loc[end_date])/(365)
     capm_values = calculate_CAPM(risk_free_rate, market_mean, beta)
     portfolio_beta_ = portfolio_beta(beta, weights)
-    if expander.button("Przejdź dalej"):
-      dict_pandas_df = {'Przeznaczona suma (zł)': var_assets_share_dict.values(), 'Waga w portfelu': weights.values(), 'Beta': beta.values(), 'Alfa': alpha.values()}#, 'Oczekiwany zwrot (dzienny) CAPM:': capm_values.values()}
+    if expander.button("Go to the next step"):
+      dict_pandas_df = {'Przeznaczona suma (PLN)': var_assets_share_dict.values(), 'Weight in the portfolio': weights.values(), 'Beta': beta.values(), 'Alpha': alpha.values()}#, 'Expected daily return CAPM:': capm_values.values()}
       pand_df = pd.DataFrame(dict_pandas_df, index=assets_multiselect)
       p = (
         Pie()
         .set_global_opts(
-          title_opts=opts.TitleOpts("Skład portfela o wartości: {}zł".format(calculate_portfolio_value_based_on_investment_sum(var_assets_share_dict))),
+          title_opts=opts.TitleOpts("Portfolio composition with a value of: {} PLN".format(calculate_portfolio_value_based_on_investment_sum(var_assets_share_dict))),
           legend_opts=opts.LegendOpts(is_show=False)
         )
         .add("", [list(item) for item in weights.items()], is_clockwise=True)
@@ -196,35 +196,42 @@ if assets_multiselect:
       expec_mean_return = expected_mean_return(stocks_mean_er, weights)
       with SML:
         st.latex(r'\textbf{SML:}')
-        st.latex(r'''Pytanie\,czy\,L_{SML}≈R_{SML}?''')
+        st.latex(r'''Question,\,whether\,L_{SML}≈R_{SML}?''')
         st.latex("R_f = {:.2f}".format(risk_free_rate))
         st.latex("E(R_m) = {:.4f}".format(market_mean))
         st.latex("β_P = {:.2f}".format((portfolio_beta_)))
-        st.latex("Lewa\,strona\,SML = {}".format(round(expec_mean_return, 4)))
-        st.latex("Prawa\,strona\,SML = {}".format(round(CAPM_calculate_portfolio_ER(capm_values, weights), 4)))
-        st.latex(r'\footnotesize{Jak\,interpretować\,pytanie?}')
-        st.markdown('Jeśli **TAK**, to możemy stwierdzić, że portfel P **był** w badanym okresie dobrze wyceniony.')
-        st.markdown('Jeśli **NIE**, to rozważamy dwa możliwe przypadki:')
-        st.markdown('Jeśli $L_{SML}$ < $P_{SML}$ to portfel P był przeszacowany (nieatrakcyjny)')
-        st.markdown('Jeśli $L_{SML}$ > $P_{SML}$ to portfel P był niedoszacowany (atrakcyjny)')
+        st.latex("Left\,side\,of\,SML = {}".format(round(expec_mean_return, 4)))
+        st.latex("Right\,side\,of\,SML = {}".format(round(CAPM_calculate_portfolio_ER(capm_values, weights), 4)))
+        st.latex(r'\footnotesize{How\,to\,interpret\,the\,question?}')
+        st.markdown('If **YES**, then we can say that portfolio P was **well-valued** during the analyzed period.')
+        st.markdown('If **NO**, then we consider two possible cases:')
+        st.markdown('If $L_{SML}$ < $P_{SML}$ then portfolio P was **overvalued** (unattractive)')
+        st.markdown('If $L_{SML}$ > $P_{SML}$ then portfolio P was **undervalued** (attractive)')
       with CML:
         st.latex(r'\textbf{CML:}')
-        st.latex(r'''Pytanie\,czy\,L_{CML}≈R_{CML}?''')
+        st.latex(r'''Question,\,whether\,L_{CML}≈R_{CML}?''')
+        # Calculating the covariance matrix of selected assets' daily returns
         covariance = np.cov(stocks_daily_range_returns[assets_multiselect].fillna(0).T)
+        # Getting the portfolio weights
         portfolio_ = weights.values()
         portfolio_numpy_data = list(portfolio_)
         portfolio_numpy = np.array(portfolio_numpy_data)
+        # Calculating portfolio volatility
         portfolio_volatility = np.sqrt(np.dot(np.dot(portfolio_numpy, covariance), portfolio_numpy.T))
+        # Getting the standard deviation of market daily returns
         market_standard_deviation = np.std(market_daily_range_returns)
+        # Calculating the expected return of the portfolio using the Capital Market Line (CML) formula
         r_CML = risk_free_rate+((market_mean-risk_free_rate)/market_standard_deviation)*portfolio_volatility
+        # Displaying the risk-free rate, expected market return, portfolio volatility and expected return
         st.latex("R_f = {:.2f}".format(risk_free_rate))
         st.latex("E(R_m) = {:.4f}".format(market_mean))
         st.latex("σ_P = {}, σ_M = {}".format(round(portfolio_volatility, 4), round(market_standard_deviation, 4)))
-        st.latex("Lewa\,strona\,CML = {}".format(round(expec_mean_return, 4))) 
-        st.latex("Prawa\,strona\,CML = {}".format(round(r_CML, 4)))
-        st.latex(r'\footnotesize{Jak\,interpretować\,pytanie?}')
-        st.markdown('Jeśli **TAK**, to możemy stwierdzić, że portfel P **był** w badanym okresie efektywny.')
-        st.markdown('Jeśli **NIE**, to portfel P **nie był** w badanym okresie efektywny.')
+        st.latex("Left\,side\,of\,CML = {}".format(round(expec_mean_return, 4))) 
+        st.latex("Right\,side\,of\,CML = {}".format(round(r_CML, 4)))
+        st.latex(r'\footnotesize{How\,to\,interpret\,the\,question?}')
+        # Displaying the interpretation of the question based on the calculated values
+        st.markdown('If **YES**, we can conclude that portfolio P was efficient during the analyzed period.')
+        st.markdown('If **NO**, we can conclude that portfolio P was not efficient during the analyzed period.')
 
 hide_streamlit_style = """
 <style>
