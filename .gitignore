@@ -135,3 +135,6 @@ dmypy.json
 .streamlit/
 lib/streamlit/static
 streamlit-storage
+
+# SQLite3
+*.db
