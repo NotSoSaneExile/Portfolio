@@ -8,7 +8,7 @@ If time allows I'd also love to try writing some scripts that would make a tradi
 # Getting Started
 Before running the script, make sure you have the following installed:
 
-* Python 3.9.x - I'm running 3.9.5
+* Python 3.9.x - I'm running 3.9.5. Will probably work with version 3.7.x
 * pandas
 * toml
 * mplfinance
