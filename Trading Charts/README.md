@@ -2,8 +2,8 @@
 This script currently retrieves daily foreign exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculates the Heiken Ashi candlestick chart, MACD indicator, ATR indicator and plots them using mplfinance library.
 
 ## Further improvements plans
-The current version is just a basic script to get things started. Eventually I'd like to allow the user to choose different financial instruments, plot live data and allow for specifiying which indicators to plot.
-If time allows I'd also love to try writing some scripts that would make a trading calls and allow for backtesting the strategies.
+The current version is just a basic script to get things started. Eventually I'd like to allow the user to choose different financial instruments, plot live data and allow for specifiying which indicators to plot.\
+If time allows I'd also love to add a feature for trading strategies backtesting.
 
 # Getting Started
 Before running the script, make sure you have the following installed:
