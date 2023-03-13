@@ -4,13 +4,13 @@ This tool allows users to create a portfolio from either stocks or funds found o
 # Dependencies
 The CAPM Verifier uses the following Python dependencies:
 
-* gsheetsdb==0.1.13.1
-* numpy==1.23.3
-* pandas==1.4.4
-* protobuf==4.22.1
-* pyecharts==1.9.1
-* streamlit==1.14.0
-* streamlit_echarts==0.4.0
+* gsheetsdb
+* numpy
+* pandas
+* protobuf
+* pyecharts
+* streamlit
+* streamlit_echarts
 * The Python version used for this app is 3.9.5.
 
 # Usage
