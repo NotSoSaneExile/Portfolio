@@ -8,26 +8,26 @@ If time allows I'd also love to try writing some scripts that would make a tradi
 # Getting Started
 Before running the script, make sure you have the following installed:
 
-Python 3
-pandas
-toml
-mplfinance
-requests
+* Python 3
+* pandas
+* toml
+* mplfinance
+* requests
 
 You can install the dependencies by running:
-'pip install -r requirements.txt' in your command line
+`pip install -r requirements.txt` in your command line
 
 You will also need an AlphaVantage API key. You can get a free one by signing up at https://www.alphavantage.co/.
 
 Once you have installed the dependencies and obtained an API key, create a secrets.toml file in the same directory as the script and add your API key as follows:
 
-'[API]'
-'api_key = "your_api_key_here"'
+`[API]`
+`api_key = "your_api_key_here"`
 
 # Running the Script
 To run the script, simply execute it in your Python environment of choice:
 
-'python main.py'
+`python main.py`
 
 The script will retrieve daily exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculate the Heiken Ashi candlestick chart, and plot it using mplfinance. The resulting plot will be displayed in a new window.
 
