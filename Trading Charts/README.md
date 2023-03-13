@@ -1,7 +1,7 @@
 # AlphaVantage Heiken Ashi Plotter
 This script currently retrieves daily foreign exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculates the Heiken Ashi candlestick chart, and plots it using mplfinance library.
 
-# Further improvments plans
+## Further improvements plans
 The current version is just a basic script to get things started. Eventually I'd like to allow the user to choose different financial instruments, plot live data and allow for specifiying which indicators to plot.
 If time allows I'd also love to try writing some scripts that would make a trading calls and allow for backtesting the strategies.
 
