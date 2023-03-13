@@ -4,7 +4,7 @@ This portfolio repository contains several projects I've worked on and find inte
 # Contents
 * A-Star Visualiser: A visualisation tool for the A-Star pathfinding algorithm, implemented in Python and Pygame.
 
-* CAPM Verifier: A tool for verifying the validity of the Capital Asset Pricing Model using historical stock data, implemented in Python using Streamlit. Tool was made for the Warsaw Stock Exchange Main Market.
+* CAPM Verifier: A tool for verifying the validity of the investement portfolios using Capital Asset Pricing Model and historical prices data. It was implemented in Python using Streamlit. The tool was made with the thought of the Warsaw Stock Exchange Main Market. 
 
 * Trading Charts Plotter: A tool for plotting trading charts with Heiken Ashi candles and technical indicators, implemented in Python and using Alpha Vantage API. This is still a work in progress. Current version is quite basic.
 
