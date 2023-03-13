@@ -13,7 +13,6 @@ To use this project, follow these steps:
 2. Clone the repository to your local machine.
 3. Install the required libraries using the command pip install -r requirements.txt.
 4. Run python main.py to download necessary NLTK packages, create a SQLite3 database, and create a machine learning model pipeline.
-5. Run python sentiment_analysis.py to preprocess the data and perform sentiment analysis on the reviews.
 
 # Files
 The project contains the following files:
