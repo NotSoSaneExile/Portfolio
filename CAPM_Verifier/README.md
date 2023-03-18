@@ -4,20 +4,21 @@ This tool allows users to create a portfolio from either stocks or funds found o
 # Dependencies
 The CAPM Verifier uses the following Python dependencies:
 
-* gsheetsdb==0.1.13.1
-* numpy==1.23.3
-* pandas==1.4.4
-* protobuf==4.22.1
-* pyecharts==1.9.1
-* streamlit==1.14.0
-* streamlit_echarts==0.4.0
+* gsheetsdb
+* numpy
+* pandas
+* protobuf
+* pyecharts
+* streamlit
+* streamlit_echarts
 * The Python version used for this app is 3.9.5.
 
 # Usage
-You can try the tool by clicking on this link.\
-If the app was put to sleep you can try to run it locally.\
+You can try the tool by clicking on this link https://capm-notsosaneexile.streamlit.app/. \
+__If the app was put to sleep or there are any problems with deployment you can try to run it locally.__ \
 Current version uses a .streamlit directory with the config and secrets files. Both being .toml format\
-If you'd like to run the code on your machine you'd need to create a .streamlit directory.\
+If you'd like to run the code on your machine you'd need to create a .streamlit directory in the repo directory.\
+Then you need to create secrets.toml file in the .streamlit directory. You can also create a config.toml file but it's not required to run the program. \
 The logic between accessing data sheets should be put in secrets.toml like that:\
 `[gcp_service_account]`\
 `type = "service_account"`\

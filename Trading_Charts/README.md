@@ -1,4 +1,4 @@
-# AlphaVantage Heiken Ashi Plotter
+# AlphaVantage Heiken Ashi Plotter (WORK IN PROGRESS)
 This script currently retrieves daily foreign exchange rate data for the AUD/USD currency pair from the AlphaVantage API, calculates the Heiken Ashi candlestick chart, MACD indicator, ATR indicator and plots them using mplfinance library.
 
 ## Further improvements plans
