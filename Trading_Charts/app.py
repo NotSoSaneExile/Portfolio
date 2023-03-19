@@ -20,12 +20,12 @@ API_KEY = config["API"]["api_key"]
 
 # Load data from json files ### function argument
 eurusd_data = get_data_from_json("EURUSD")
-# usdjpy_data = get_data_from_json("USDJPY")
+usdjpy_data = get_data_from_json("USDJPY")
 gbpusd_data = get_data_from_json("GBPUSD")
 usdchf_data = get_data_from_json("USDCHF")
 
 eurusd_df = pd.DataFrame(eurusd_data)
-# usdjpy_df = pd.DataFrame(eurusd_data)
+usdjpy_df = pd.DataFrame(eurusd_data)
 gbpusd_df = pd.DataFrame(eurusd_data)
 usdchf_df = pd.DataFrame(eurusd_data)
 
