@@ -6,9 +6,9 @@ This portfolio repository contains several projects I've worked on and find inte
 
 * CAPM Verifier: A tool for verifying the validity of the investement portfolios using Capital Asset Pricing Model and historical prices data. It was implemented in Python using Streamlit. The tool was made with the thought of the Warsaw Stock Exchange Main Market. 
 
-* Trading Charts Plotter: A tool for plotting trading charts with Heiken Ashi candles and technical indicators, implemented in Python and using Alpha Vantage API. This is still a work in progress. Current version is quite basic.
+* Sentiment Analysis ML: A machine learning model for sentiment analysis of text data, implemented in Python using Natural Language Toolkit (NLTK) and scikit-learn.
 
-* Sentiment Analysis ML: A machine learning model for sentiment analysis of text data, implemented in Python using Natural Language Toolkit (NLTK) and scikit-learn. 
+* Trading Charts Plotter: This is still a work in progress.
 
 Each project has its own folder, which contains its source code and any necessary files. Additionally, each project folder has its own README file, providing more information about the project.
 

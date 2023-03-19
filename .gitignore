@@ -141,3 +141,6 @@ streamlit-storage
 
 # Visual Studio Code VSC
 .vscode/
+
+# Windows PowerShell profiles
+WindowsPowerShell/*.ps1
