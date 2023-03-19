@@ -138,3 +138,6 @@ streamlit-storage
 
 # SQLite3
 *.db
+
+# Visual Studio Code VSC
+.vscode/
