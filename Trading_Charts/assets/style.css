@@ -1,0 +1,87 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: gold;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h2 {
+  color: gold;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h3 {
+  color: gold;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: gold;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: gold;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #222;
+}
+
+tr:hover {
+  background-color: #555;
+}
+
+.alert {
+  background-color: gold;
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.alert-danger {
+  background-color: red;
+  color: white;
+}

@@ -5,13 +5,6 @@ import mplfinance as mpf
 import json
 import numpy as np
 
-# Most important Forex pairs #EUR/USD, USD/JPY, GBP/USD, USD/CHF.
-currency_pairs = ["EURUSD", "USDJPY", "GBPUSD", "USDCHF"]
-
-# Setting the api key in the config
-config = toml.load("secrets.toml")
-API_KEY = config["API"]["api_key"]
-
 # Caching API requests .
 cache = {}
 
@@ -31,21 +24,22 @@ def heiken_ashi(df):
 
 
 def save_data_to_json(currency_pair, data):
-    with open(f"{currency_pair}.json", "w") as jsonfile:
+    with open(f"exchange_ratio_data/{currency_pair}.json", "w") as jsonfile:
         json.dump(data, jsonfile, indent=4)
 
 
-def get_data_for_pairs(api_key, func, pairs, outputsize):
+def get_data_from_api(api_key, func, pairs, outputsize):
     data = {}
     for pair in pairs:
         if (api_key, func, pair, outputsize) in cache:
             heiken_ashi_df = cache[(api_key, func, pair, outputsize)]
         else:
             url = f"https://www.alphavantage.co/query?function={func}&from_symbol={pair[:3]}&to_symbol={pair[3:]}&outputsize={outputsize}&apikey={api_key}"
-            response = requests.get(url).json()
+            response = requests.get(url)
             try:
-                save_data_to_json(pair, data=response)
-                df = pd.DataFrame(response[list(response.keys())[-1]]).transpose()
+                data_dict = response.json()
+                save_data_to_json(pair, data_dict)
+                df = pd.DataFrame(data_dict[list(data_dict.keys())[-1]]).transpose()
                 df.columns = ["Open", "High", "Low", "Close"]
                 df = df.astype(float)
                 df.index = pd.to_datetime(df.index)
@@ -58,4 +52,13 @@ def get_data_for_pairs(api_key, func, pairs, outputsize):
     return data
 
 
-data = get_data_for_pairs(API_KEY, "FX_DAILY", currency_pairs, "full")
+def get_data_from_json(pair):
+    with open(f"exchange_ratio_data/{pair}.json", "r") as f:
+        data_dict = json.load(f)
+        df = pd.DataFrame(data_dict[list(data_dict.keys())[-1]]).transpose()
+        df.columns = ["Open", "High", "Low", "Close"]
+        df = df.astype(float)
+        df.index = pd.to_datetime(df.index)
+        df = df.iloc[::-1]
+        heiken_ashi_df = heiken_ashi(df)
+        return heiken_ashi_df
