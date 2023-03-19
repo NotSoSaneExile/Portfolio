@@ -12,6 +12,9 @@ from sklearn.metrics import confusion_matrix, classification_report
 
 if __name__ == "__main__":
     try:
+        # nltk.download('stopwords')
+        # nltk.download('punkt')
+        # nltk.download('wordnet')
         download_nltk_packages()
         create_database()
         with sqlite3.connect("hogwarts_legacy_reviews.db") as conn:
@@ -40,5 +43,5 @@ if __name__ == "__main__":
             score = grid_search.score(X_test, y_test)
             print("Accuracy:", score)
     except Exception as e:
-        print("Error:", e)
+        print("An error occured:", e)
         traceback.print_exc()
